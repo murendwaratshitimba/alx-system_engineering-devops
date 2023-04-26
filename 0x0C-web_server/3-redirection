@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Configure my Nginx server so that /redirect_me is redirecting to my youtube page.
+# Configure my Nginx server so that /redirect_me
+# is redirecting to my youtube page.
 sudo apt-get update -y
 sudo apt-get install -y nginx
 
