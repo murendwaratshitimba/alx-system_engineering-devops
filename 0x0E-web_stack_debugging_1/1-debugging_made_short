@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# task #0 optimized script automated fix
-mv /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-cp /etc/nginx/sites-enabled/default /etc/nginx/sites-available/default
-service nginx start
+# Changes port in Nginx
+sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
+sudo service nginx restart
+kill -9 "$(cat /var/run/nginx.pid)"
