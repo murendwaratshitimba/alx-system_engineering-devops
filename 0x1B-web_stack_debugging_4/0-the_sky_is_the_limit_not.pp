@@ -1,16 +1,11 @@
 # Task 0: Sky is the limit, let's bring that limit higher
 
-exec { 'fix-for-nginx':
+# Fix Nginx limits
 
-    command => '/bin/sed -i "s/15/4096/" /etc/default/nginx',
+exec { 'Update-Limit':
 
-    path => '/usr/local/bin/:/bin/',
+  command => '/usr/bin/env sed -i s/15/2000/ /etc/default/nginx',
 
 }
 
-exec { 'restart-nginx':
-
-    command => '/etc/init.d/nginx restart',
-
-    path => '/etc/init.d',
-}
+exec { '/usr/bin/env service nginx restart': }
